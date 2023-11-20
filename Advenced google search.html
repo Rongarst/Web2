@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Extended Google Search</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 20px;
+    }
+    .container-back {
+        display: grid;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 10px;
+        width: 300px;
+        height: 150px;
+        border-radius: 20px;
+        background-color:#ffffff;
+        padding: 20px;
+        align-items: center;
+        box-sizing: border-box;
+    }
+    .button-back {
+        width: 100%;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        border-radius: 20px;
+        background-color: #4285f4;
+        color: #ffffff;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    .search-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .search-container input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 4px;
+        border: 1px solid #ccc;
+    }
+    .search-container input[type="submit"] {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #4285f4;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .search-container input[type="submit"]:hover {
+        background-color: #327ae3;
+    }
+    .lucky-button {
+        display: block;
+        text-align: center;
+        margin-top: 20px;
+    }
+    .lucky-button a {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        background-color: #4285f4;
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+    .lucky-button a:hover {
+        background-color: #327ae3;
+    }
+  </style>
+</head>
+<body>
+    <div class="container-back">
+        <form action="Google search.html" method="get" target="_blank">
+            <input type="submit" value="Google search" class="button-back">
+        </form>
+    </div>
+    <div class="search-container">
+    <form action="https://www.google.com/search" method="GET" target="_blank">
+      <label for="allWords">Знайти сторінки із... «усіма цими словами»:</label>
+      <input type="text" name="as_q" id="allWords" required>
+      <br>
+      <label for="exactPhrase">Знайти сторінки з... «саме цим словом або фразою»:</label>
+      <input type="text" name="as_epq" id="exactPhrase">
+      <br>
+      <label for="anyWords">Знайти сторінки з... «будь-яким із цих слів»:</label>
+      <input type="text" name="as_oq" id="anyWords">
+      <br>
+      <label for="excludeWords">Знайти сторінки з... «жодне з цих слів»:</label>
+      <input type="text" name="as_eq" id="excludeWords">
+      <br>
+      <input type="hidden" name="as_sitesearch" value="google.com">
+      <input type="hidden" name="as_occt" value="any">
+      <input type="submit" value="Розширений пошук">
+    </form>
+    <div class="lucky-button">
+        <button onclick="lucky()">Мені пощастить</button>
+      </div>
+    </div>
+    <script>
+      function lucky() {
+        var allWords = document.querySelector('input[name="as_q"]').value;
+        var exactPhrase = document.querySelector('input[name="as_epq"]').value;
+        var anyWords = document.querySelector('input[name="as_oq"]').value;
+        var excludeWords = document.querySelector('input[name="as_eq"]').value;
+        var luckyURL = 'https://www.google.com/search?q=' + encodeURIComponent(allWords + ' ' + exactPhrase + ' ' + anyWords + ' ' + excludeWords) + '&btnI';
+        window.location.href = luckyURL;
+      }
+    </script>
+    </div>
+  </div>
+</body>
+</html>

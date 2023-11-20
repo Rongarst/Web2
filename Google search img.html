@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Image Search</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .container-back {
+        display: grid;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        margin-right: 10px;
+        width: 300px;
+        height: 150px;
+        border-radius: 20px;
+        background-color:#ffffff;
+        padding: 20px;
+        align-items: center;
+        box-sizing: border-box;
+        }
+        .button-back {
+        width: 100%;
+        padding: 10px 20px;
+        margin-bottom: 20px;
+        text-align: center;
+        border-radius: 20px;
+        background-color: #4285f4;
+        color: #ffffff;
+        font-size: 16px;
+        cursor: pointer;
+        }
+    .search-container {
+        text-align: center;
+        border-radius: 20px;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    .search-input {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 20px;
+        margin-bottom: 10px;
+        outline: none;
+    }
+    .search-button {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 20px;
+        background-color: #4285f4;
+        color: #fff;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        outline: none;
+        }
+    .search-button:hover {
+        background-color: #327ae3;
+    }
+  </style>
+</head>
+<body>
+    <div class="container-back">
+        <form action="Google search.html" method="get" target="_blank">
+            <input type="submit" value="Google search" class="button-back">
+        </form>
+    </div>
+  <div class="search-container">
+    <form action="https://www.google.com/search" method="GET" target="_blank">
+      <input type="text" name="q" class="search-input" placeholder="Введіть ваш запит" required>
+      <br>
+      <input type="hidden" name="tbm" value="isch">
+      <input type="submit" value="Google Image Search" class="search-button">
+    </form>
+  </div>
+</body>
+</html>
